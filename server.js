@@ -6,7 +6,7 @@ import connectDB from './config/db.js';
 import authRoutes from './routes/authRoute.js'
 
 // configure new 
-dotenv.config();
+dotenv.config({path: '../.env'});
 
 // database config 
 connectDB();
