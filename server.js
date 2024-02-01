@@ -6,7 +6,7 @@ import connectDB from './config/db.js';
 import authRoutes from './routes/authRoute.js'
 
 // configure new 
-dotenv.config({path: '../.env'});
+dotenv.config();
 
 // database config 
 connectDB();
@@ -33,7 +33,8 @@ app.get('/',(req,res) =>{
 
 //port
 const PORT = process.env.PORT;
+const HOSTNAME = process.env.HOSTNAME;
 
-app.listen(PORT,()=>{
-    console.log(`server started on port ${PORT}`.bgCyan.white);
+app.listen(PORT,HOSTNAME,()=>{
+    console.log(`server started on port http://${HOSTNAME}:${PORT}`.bgCyan.white);
 })
